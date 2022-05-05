@@ -6,7 +6,7 @@ pipeline{
     stage("build"){
        steps{
         echo 'building application'
-        dotnet build
+        dotnet build /RobotSimulation.sln
         
       }
     }
