@@ -7,7 +7,7 @@ pipeline{
       steps {
         sh label: 'Nuget Restore', 
         script: '''
-          nuget restore "RobotSimulation\\RobotSimulation.sln"
+         // nuget restore "RobotSimulation\\RobotSimulation.sln"
           echo "Nuget Done Starting Msbuild *************"
         ''' 
       }
