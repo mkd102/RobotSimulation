@@ -5,7 +5,7 @@ pipeline{
   stages{
       stage('Nuget Restore') {
       steps {
-        bat label: 'Nuget Restore', 
+        sh label: 'Nuget Restore', 
         script: '''
           nuget restore "RobotSimulation\\RobotSimulation.sln"
           echo "Nuget Done Starting Msbuild *************"
@@ -18,7 +18,7 @@ pipeline{
         script {
           //def msbuild = tool name: 'msbuild_2017', type: 'hudson.plugins.msbuild.MsBuildInstallation'
           tool name: 'msbuild_2017', type: 'msbuild'
-          bat "\"${tool 'msbuild_2017'}\"\\msbuild.exe RobotSimulation\\RobotSimulation.sln \""
+          sh "\"${tool 'msbuild_2017'}\"\\msbuild.exe RobotSimulation\\RobotSimulation.sln \""
         }
       }
     }
