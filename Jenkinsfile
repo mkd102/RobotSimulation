@@ -6,7 +6,9 @@ pipeline{
     stage("build"){
        steps{
         echo 'building application'
-        dotnet build /RobotSimulation.sln
+        dotnet restore "RobotSimulation/RobotSimulation/RobotSimulation.csproj"
+
+        dotnet build "RobotSimulation/RobotSimulation/" --configuration Release
         
       }
     }
